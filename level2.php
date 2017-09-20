@@ -18,6 +18,7 @@
 			{
 				background-color:#ECECEA;
 				width:100%;
+				background-image: url("images/background1.jpg");
 			}
 			#scr
 			{
@@ -58,16 +59,48 @@
 			{
 				border-color:#E44424;
 			}
+			.menu{ font-family: Arial, Helvetica, sans-serif; font-size:12px; color:black; font-weight:bold; padding-top:5px; text-decoration:none;}
+.menu:hover { color:#CC3; text-decoration:overline;}
+.menu a
+{
+ color:black;
+ font-size:15px;
+ text-decoration:none;
+}
+.button
+{
+cursor:hand;
+border-radius:5px;
+color:rgb(248,248,238);
+width:80px;
+background-color:rgba(205,55,44,1);
+padding:4px 5px;
+font-size:16px;
+}
+
 		</style>
 	</head>
 	<body>
+		<div style="margin: 0px auto auto auto;width:100%;min-height:600px;">
+			<div style="height:75px;background:black;filter:alpha(opacity=20);;background:black;">
+
+			<table  width="100%" border="0" cellspacing="0" cellpadding="0" align="right" style="margin-top:0px">
+				  <tbody><tr>
+					<td >&nbsp;&nbsp;&nbsp;<a href="index.html">
+					
+			<img src="images/trigger2017.JPG" width="80" height="75"> </a></td>
+					<td    width="200px" class="menu">&nbsp;<a style="color: white" href="index.html">Home</td>
+				<td  class='menu'>&nbsp;<a style="color: white" href='leaderboard.php'>Leaderboard</a></td>      </tr>
+				</tbody>
+			</table>			
+		</div>
 		<div class="container-fluid">
 			<div id="mar">
 				<center><h2 id="scr">&nbsp;&nbsp;&nbsp;Question 2</h2></center>
 			</div>
 			<div id="forms">
-				<form method="post" action="lev1.php">
-					<p>100^0</p>
+				<form method="post" action="lev2.php">
+					<img src="images/trigger2017.JPG" width="40%" height="300"><br><br>
 					<input id="reg" name="re" type="text" placeholder="Your Answer" title="Answer" required><br><br>
 					<input type="submit" name="submit" id="sub"  value="Submit"></input>
 				</form>

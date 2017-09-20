@@ -12,14 +12,16 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 	$mai=$_POST['ma'];
 	$pho=$_POST['ph'];
     $fla=1;
+	$reg=$_POST['reg1'];
 	header('Refresh: 5; url=login.php');
-	    if(empty($user) || empty($pass) || empty($mai) || empty($pho))
+	    if(empty($user) || empty($pass) || empty($mai) || empty($pho) || empty($reg))
         {
                 $fla=0;
         }
         if($fla!=0)
         {
-	    $r=mysqli_query($bd,"INSERT INTO triggeruser VALUES('$user','$pass','$mai','$pho','$fla')");
+			$da=date("Y-m-d H:i:s");
+	    $r=mysqli_query($bd,"INSERT INTO triggeruser VALUES('$user','$pass','$mai','$pho','$fla','$reg','$da')");
 	    if($r)
 	    {	
                	echo '<center><h1>Successfully Registered!!</h1></center>';
@@ -32,3 +34,20 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 	else
 		echo '<center><h1>Invalid User Input!!</h1></center>';
 ?>	
+<html>
+	<head>
+		<style>
+		body
+			{
+				background-image: url("images/processing.gif");
+    height: 50%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>

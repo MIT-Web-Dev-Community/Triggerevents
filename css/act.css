@@ -1,0 +1,80 @@
+body
+{
+	background-image:url("images/bg5.jpg");
+	background-size:cover;
+	oveflow:hidden;		
+}
+.circle
+{
+  			font-size:1em;
+				width:100px;
+				height:100px;
+				border-radius:50px;				
+				padding-top:40px;
+				background-color:white;								
+				color:green;
+				position:relative;
+				-webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+				animation: mymove 5s infinite;
+	
+}
+.menu
+{
+	position:fixed;
+	top:0%;
+	left:2%
+}
+			.head_title
+			{
+				font-size:4em;
+				color:white;
+				margin-top:14%;			
+			}
+				.head_title .circle
+			{
+				font-size:0.26em;
+				width:100px;
+				height:100px;
+				border-radius:50px;				
+				padding-top:40px;
+				background-color:white;								
+				color:green;
+				position:relative;
+				-webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+				animation: mymove 5s infinite;
+				}
+
+				/* Chrome, Safari, Opera */
+			@-webkit-keyframes mymove {
+					50% {-webkit-transform: rotateY(180deg);}
+				}
+
+			@keyframes mymove {
+					50% {transform: rotateY(180deg);}
+				}
+				
+.title-heading
+{
+	letter-spacing:2px;
+	color:black;
+}
+.para
+{
+	color:black;
+}
+.act-button
+{
+	width:130px;
+	height:50px;
+	letter-spacing:2px;
+	border:none;
+	box-shadow:15px 15px 15px gray;
+}
+
+/** slidder ***/
+.list-group-item:hover
+{
+background-color:#e4e4e9;	
+border:none;
+
+}

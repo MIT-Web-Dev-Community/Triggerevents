@@ -13,12 +13,13 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
         {				
 				header('Refresh: 5; url=level2.php');
 				echo '<center><h1>Correct Answer!! Loading Next Question</h1></center>';
-                $r=mysqli_query($bd,"Select level from triggeruser where uname='$un'");
+                $r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
 				$row=mysqli_fetch_assoc($r);
 				$lev=$row['level']+1;
 				$_SESSION['lev']=$lev;
-				$r=mysqli_query($bd,"Update triggersuser set level='$lev' where uname='$un'");
-				
+				$da=date("Y-m-d H:i:s");
+				$qry="Update triggeruser set level='$lev',time='$da' where rno='$un'";
+				$r=mysqli_query($bd,$qry);			
 	    }
         else
 		{
@@ -26,3 +27,20 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 			echo '<center><h1>InCorrect Answer! Try Again</h1></center>';			
 		}
 ?>	
+<html>
+	<head>
+		<style>
+		body
+			{
+				background-image: url("images/processing.gif");
+    height: 50%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>
