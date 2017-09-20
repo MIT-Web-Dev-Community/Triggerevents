@@ -17,9 +17,15 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
                 $r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
 				$row=mysqli_fetch_assoc($r);
 				$lev=$row['level']+1;
-				$_SESSION['lev']=$lev;
-				$da=date("Y-m-d H:i:s");
-				$r=mysqli_query($bd,"Update triggeruser set level='$lev',time='$da' where rno='$un'");	
+				if($lev==$_SESSION['lev']+1)
+				{		
+					$_SESSION['lev']=$lev;
+					$da=date("Y-m-d H:i:s");
+					$qry="Update triggeruser set level='$lev',time='$da' where rno='$un'";
+					$r=mysqli_query($bd,$qry);
+				}
+				else
+					$_SESSION['lev']=$lev-1;
 				echo '<center><h1>Correct Answer! Loading Next question</h1></center>';
 	    }
         else

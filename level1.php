@@ -2,7 +2,7 @@
 	session_start();
 	if(empty($_SESSION['us']))
 	{
-		header("Location:level1.php");
+		header("Location:login.php");
 	}
 	else if($_SESSION['lev']!=1)
 	{

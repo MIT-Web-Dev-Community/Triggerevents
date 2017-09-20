@@ -105,7 +105,7 @@ font-size:16px;
 			</div>
 			<div id="forms">
 				<form method="post" action="lev22.php">
-					<img src="images/22.jpg" width="100%" height="300"><br><br>
+					<img src="images/22.JPG" width="100%" height="300"><br><br>
 					<input id="reg" name="re" type="text" placeholder="Your Answer" title="Answer" required><br><br>
 					<input type="submit" name="submit" id="sub"  value="Submit"></input>
 				</form>

@@ -14,15 +14,7 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 	    if(!empty($ans) && $ans=="margotrobbie")
         {
 				header('Refresh: 3; url=leaderboard.php');
-                $r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
-				$row=mysqli_fetch_assoc($r);
-				$lev=$row['level']+1;
-				
-				$_SESSION['lev']=$lev;
-				$da=date("Y-m-d H:i:s");
-				$r=mysqli_query($bd,"Update triggeruser set level='$lev',time='$da' where rno='$un'");	
-				echo '<center><h1>Correct Answer! Congrats</h1></center>';
-	    }
+        }
         else
 		{
 			header('Refresh: 3; url=level25.php');
