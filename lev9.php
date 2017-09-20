@@ -13,8 +13,8 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 	$ans=preg_replace('/\s+/','',$ans);
 	    if(!empty($ans) && $ans=="anushkasharma")
         {
-				header('Refresh: 3; url=level10.php');
-                $r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
+						header('Location:correct.php');
+				$r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
 				$row=mysqli_fetch_assoc($r);
 				$lev=$row['level']+1;
 				if($lev==$_SESSION['lev']+1)
@@ -24,14 +24,12 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 					$qry="Update triggeruser set level='$lev',time='$da' where rno='$un'";
 					$r=mysqli_query($bd,$qry);
 				}
-				else
+				else 
 					$_SESSION['lev']=$lev-1;
-				echo '<center><h1>Correct Answer! Loading Next question</h1></center>';
 	    }
         else
 		{
-			header('Refresh: 3; url=level9.php');
-			echo '<center><h1>Incorrect Answer!! Try Again!!</h1></center>';
+			header('Location:wrong.php');
 		}
 ?>	
 <html>
