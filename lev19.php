@@ -10,23 +10,23 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 	$ans=$_POST['re'];
 	$un=$_SESSION['us'];
 	$ans=strtolower($ans);
-	$ans=preg_replace('/\s+/', '',$ans);
-	    if(!empty($ans) && $ans=="trigger")
-        {				
-				header('Refresh: 5; url=level2.php');
-				echo '<center><h1>Correct Answer!! Loading Next Question</h1></center>';
+	$ans=preg_replace('/\s+/','',$ans);
+	    if(!empty($ans) && $ans=="maniratnam")
+        {
+				header('Refresh: 3; url=level20.php');
                 $r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
 				$row=mysqli_fetch_assoc($r);
 				$lev=$row['level']+1;
+				
 				$_SESSION['lev']=$lev;
 				$da=date("Y-m-d H:i:s");
-				$qry="Update triggeruser set level='$lev',time='$da' where rno='$un'";
-				$r=mysqli_query($bd,$qry);			
+				$r=mysqli_query($bd,"Update triggeruser set level='$lev',time='$da' where rno='$un'");	
+				echo '<center><h1>Correct Answer! Loading Next question</h1></center>';
 	    }
         else
 		{
-			header('Refresh: 3; url=level1.php');
-			echo '<center><h1>InCorrect Answer! Try Again</h1></center>';			
+			header('Refresh: 3; url=level19.php');
+			echo '<center><h1>Incorrect Answer!! Try Again!!</h1></center>';
 		}
 ?>	
 <html>

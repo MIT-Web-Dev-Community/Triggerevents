@@ -4,6 +4,11 @@
 	{
 		header("Location:level1.php");
 	}
+	else if($_SESSION['lev']!=1)
+	{
+		$page="Location:level".$_SESSION['lev'].".php";
+		header($page);
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +27,8 @@
 			}
 			#scr
 			{
-				font-size:5em;
-				color:#7D1935;
+				font-size:2em;
+				color:#ffffff;
 			}
 			#top
 			{
@@ -42,16 +47,16 @@
 			#forms
 			{
 				margin-top:0%;
-				margin-left:40%;
+				margin-left:25%;
 			}
 			#reg,#nam,#mai,#pho,#dep
 			{
-				width:40%;
+				width:100%;
 				padding:10px 20px;
 			}
 			#sub
 			{
-				width:20%;
+				width:100%;
 				margin-left:10%;
 				background:#7E8F7C;
 			}	
@@ -96,11 +101,11 @@ font-size:16px;
 		</div>
 		<div class="container-fluid">
 			<div id="mar">
-				<center><h2 id="scr">&nbsp;&nbsp;&nbsp;Question 1</h2></center>
+				<center><h4 id="scr">&nbsp;&nbsp;&nbsp;Question 1</h4></center>
 			</div>
 			<div id="forms">
 				<form method="post" action="lev1.php">
-					<img src="images/trigger2017.JPG" width="40%" height="300"><br><br>
+					<img src="images/1.JPG" width="100%" height="300"><br><br>
 					<input id="reg" name="re" type="text" placeholder="Your Answer" title="Answer" required><br><br>
 					<input type="submit" name="submit" id="sub"  value="Submit"></input>
 				</form>

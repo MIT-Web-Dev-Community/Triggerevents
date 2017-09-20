@@ -13,8 +13,8 @@ mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>"
 	$pho=$_POST['ph'];
     $fla=1;
 	$reg=$_POST['reg1'];
-	header('Refresh: 5; url=login.php');
-	    if(empty($user) || empty($pass) || empty($mai) || empty($pho) || empty($reg))
+	header('Refresh: 5; url=register.php');
+	    if(empty($user) || empty($pass) || empty($mai) || empty($pho) || empty($reg) || (strlen($reg)!=10) || (strlen($pho)!=10))
         {
                 $fla=0;
         }

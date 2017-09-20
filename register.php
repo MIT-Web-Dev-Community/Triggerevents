@@ -37,16 +37,16 @@
 			#forms
 			{
 				margin-top:0%;
-				margin-left:40%;
+				margin-left:25%;
 			}
 			#reg,#nam,#mai,#pho,#dep,#reg1
 			{
-				width:40%;
+				width:60%;
 				padding:10px 20px;
 			}
 			#sub
 			{
-				width:20%;
+				width:40%;
 				margin-left:10%;
 				background:#00BFFF;
 			}	

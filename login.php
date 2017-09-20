@@ -39,7 +39,7 @@
     <form action="log.php" method="post">
       <div class="input-container">
         <input type="text" name="us" id="Username" required="required"/>
-        <label for="Register Number">Username</label>
+        <label for="Register Number">Register Number</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">

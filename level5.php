@@ -4,7 +4,7 @@
 	{
 		header("Location:level1.php");
 	}
-	else if($_SESSION['lev']!=2)
+	else if($_SESSION['lev']!=5)
 	{
 		$page="Location:level".$_SESSION['lev'].".php";
 		header($page);
@@ -28,7 +28,7 @@
 			#scr
 			{
 				font-size:2em;
-				color:#ffffff;
+				color:#FFFFFF;
 			}
 			#top
 			{
@@ -57,6 +57,7 @@
 			#sub
 			{
 				width:100%;
+				margin-left:10%;
 				background:#7E8F7C;
 			}	
 			#reg:focus,#nam:focus,#mai:focus,#pho:focus,#dep:focus
@@ -100,11 +101,11 @@ font-size:16px;
 		</div>
 		<div class="container-fluid">
 			<div id="mar">
-				<center><h4 id="scr">&nbsp;&nbsp;&nbsp;Question 2</h4></center>
+				<center><h2 id="scr">&nbsp;&nbsp;&nbsp;Question 5</h2></center>
 			</div>
 			<div id="forms">
-				<form method="post" action="lev2.php">
-					<img src="images/2.jpg" width="100%" height="300"><br><br>
+				<form method="post" action="lev5.php">
+					<img src="images/5.jpg" width="100%" height="300"><br><br>
 					<input id="reg" name="re" type="text" placeholder="Your Answer" title="Answer" required><br><br>
 					<input type="submit" name="submit" id="sub"  value="Submit"></input>
 				</form>

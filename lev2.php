@@ -9,19 +9,27 @@ $bd = @mysqli_connect($mysql_hostname, $mysql_user,$mysql_password) or die("Coul
 mysqli_select_db($bd,$mysql_database) or die("<h1>Could not select database<h1>");
 	$ans=$_POST['re'];
 	$un=$_SESSION['us'];
-	    if(!empty($ans) && $ans=="1")
+	$ans=strtolower($ans);
+	$ans=preg_replace('/\s+/', '',$ans);
+	    if(!empty($ans) && $ans=="erumasaani")
         {
-				header('Refresh: 3; url=level3.php');
+				header('Refresh: 5; url=level3.php');
+				echo '<center><h1>Correct Answer!! Loading Next Question</h1></center>';
                 $r=mysqli_query($bd,"Select level from triggeruser where rno='$un'");
-				$row=mysqli_fetch_assoc($r)
+				$row=mysqli_fetch_assoc($r);
 				$lev=$row['level']+1;
-				$r=mysqli_query($bd,"Update triggeruser set level='$lev' where rno='$un'");	
-				echo '<center><h1>Correct Answer! Loading Next question</h1></center>';
-	    }
+				if($lev==$_SESSION['lev']+1)
+				{
+					$_SESSION['lev']=$lev;
+					$da=date("Y-m-d H:i:s");
+					$qry="Update triggeruser set level='$lev',time='$da' where rno='$un'";
+					$r=mysqli_query($bd,$qry);
+				}		
+		}
         else
 		{
-			echo '<center><h1>Incorrect Answer!! Try Again!!</h1></center>';
 			header('Refresh: 3; url=level2.php');
+			echo '<center><h1>Incorrect Answer!! Try Again!!</h1></center>';
 		}
 ?>	
 <html>
